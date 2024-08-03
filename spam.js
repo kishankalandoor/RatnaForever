@@ -1,11 +1,3 @@
-window.onload = function() {
-  fetch('sprits.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('content').innerHTML = data;
-      setupSearch();
-    });
-
   function setupSearch() {
     const searchButton = document.getElementById('searchButton');
     searchButton.addEventListener('click', function() {
