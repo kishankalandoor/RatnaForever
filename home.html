@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>veg Menu</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
         .menu-text {
             color: white;
@@ -46,6 +49,7 @@
         .card {
             position: relative;
             overflow: hidden; /* Ensures content does not overflow the card */
+            animation: fadeInDown 1s; /* Smooth drop-down animation */
         }
         .card-img-top {
             width: 100%; /* Ensures image spans the full width of the card */
@@ -54,6 +58,16 @@
         }
         .card-body {
             text-align: center; /* Centers the text within the card body */
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         @media (max-width: 576px) {
             .card-img-top {
@@ -66,6 +80,9 @@
             #searchButton {
                 width: 60px; /* Adjust button width for smaller screens */
             }
+            .card-body {
+                font-size: 0.9rem; /* Adjust font size for smaller screens */
+            }
         }
         @media (max-width: 768px) {
             .card-img-top {
@@ -75,24 +92,20 @@
     </style>
 </head>
 <body>
-    
-
     <div class="bg-image" style="background-image: url('bgnd.png'); background-size: cover; background-attachment: fixed; height: 400vh; padding-top: 150px;">
-        <br></br>
         <center>
             <a href="index.html">
-                <img src="rfmenu.png" width="400" height="400">
+                <img src="rfmenu.png" width="400" height="400" class="animate__animated animate__fadeInDown">
             </a>
         </center>
-         <p style="color: rgba(0, 0, 0, 0);">This Menu is devoloped by © Kishan Kalandoor </p>
-        <div class="container text-center">
-           
+        <p style="color: rgba(0, 0, 0, 0);">This Menu is developed by © Kishan Kalandoor</p>
+        <div class="container text-center animate__animated animate__fadeInDown">
 
             <!-- Card Showcase -->
             <div class="container mt-5">
                 <div class="row">
                     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                        <div class="card">
+                        <div class="card animate__animated animate__fadeInDown">
                             <a href="veg.html">
                                 <img src="veg.png" class="card-img-top" alt="Veg">
                             </a>
@@ -103,7 +116,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                        <div class="card">
+                        <div class="card animate__animated animate__fadeInDown">
                             <a href="nonveg.html">
                                 <img src="nonveg.png" class="card-img-top" alt="Non-Veg">
                             </a>
@@ -114,7 +127,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                        <div class="card">
+                        <div class="card animate__animated animate__fadeInDown">
                             <a href="drinks.html">
                                 <img src="drinks.png" class="card-img-top" alt="Drinks">
                             </a>
@@ -125,7 +138,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                        <div class="card">
+                        <div class="card animate__animated animate__fadeInDown">
                             <a href="ice.html">
                                 <img src="ice.png" class="card-img-top" alt="Ice Cream">
                             </a>
@@ -138,6 +151,7 @@
                 </div>
             </div>
         </div>
+        <p style="color: rgba(0, 0, 0, 0);">This Menu is developed by © Kishan Kalandoor</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -161,7 +175,21 @@
             }
         });
     </script>
-    <p style="color: rgba(0, 0, 0, 0);">This Menu is devoloped by © Kishan Kalandoor </p>
-
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
