@@ -1,167 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>veg Menu</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .menu-text {
-            color: white;
-            font-weight: bold;
-        }
-        .highlight {
-            background-color: yellow;
-        }
-        .search-container {
-            position: relative;
-            width: 100%;
-            max-width: 500px; /* Optional: Limit width for better appearance */
-            margin: 20px auto;
-        }
-        #searchInput {
-            background-color: transparent;
-            border: 2px solid white;
-            color: white;
-            border-radius: 5px 0 0 5px; /* Rounded corners on the left */
-            padding-right: 80px; /* Space for the button */
-            width: calc(100% - 80px); /* Adjust width to fit the button */
-            box-sizing: border-box;
-        }
-        #searchButton {
-            position: absolute;
-            right: 0;
-            top: 0;
-            height: 100%;
-            width: 80px; /* Adjust the width of the button */
-            background-color: gray;
-            color: white;
-            border: none;
-            border-radius: 0 5px 5px 0; /* Rounded corners on the right */
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .card {
-            position: relative;
-            overflow: hidden; /* Ensures content does not overflow the card */
-        }
-        .card-img-top {
-            width: 100%; /* Ensures image spans the full width of the card */
-            height: 200px; /* Set a consistent height */
-            object-fit: cover; /* Ensures image covers the area without distortion */
-        }
-        .card-body {
-            text-align: center; /* Centers the text within the card body */
-        }
-        @media (max-width: 576px) {
-            .card-img-top {
-                height: 150px; /* Reduce height on smaller screens */
-            }
-            #searchInput {
-                padding-right: 60px; /* Adjust padding for smaller screens */
-                width: calc(100% - 60px);
-            }
-            #searchButton {
-                width: 60px; /* Adjust button width for smaller screens */
-            }
-        }
-        @media (max-width: 768px) {
-            .card-img-top {
-                height: 175px; /* Slightly larger height for medium screens */
-            }
-        }
-    </style>
+  <title>Main menu</title>
+  <script>
+    window.onload = function() {
+      fetch('home.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('content').innerHTML = data;
+        });
+    };
+  </script>
 </head>
 <body>
-    
-
-    <div class="bg-image" style="background-image: url('bgnd.png'); background-size: cover; background-attachment: fixed; height: 400vh; padding-top: 150px;">
-        <br></br>
-        <center>
-            <a href="index.html">
-                <img src="rfmenu.png" width="400" height="400">
-            </a>
-        </center>
-         <p style="color: rgba(0, 0, 0, 0);">This Menu is devoloped by © Kishan Kalandoor </p>
-        <div class="container text-center">
-           
-
-            <!-- Card Showcase -->
-            <div class="container mt-5">
-                <div class="row">
-                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                        <div class="card">
-                            <a href="veg.html">
-                                <img src="veg.png" class="card-img-top" alt="Veg">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">Vegetarian</h5>
-                                <p class="card-text">Delicious vegetarian options.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                        <div class="card">
-                            <a href="nonveg.html">
-                                <img src="nonveg.png" class="card-img-top" alt="Non-Veg">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">Non-Vegetarian</h5>
-                                <p class="card-text">Tasty non-vegetarian dishes.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                        <div class="card">
-                            <a href="drinks.html">
-                                <img src="drinks.png" class="card-img-top" alt="Drinks">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">Drinks</h5>
-                                <p class="card-text">Refreshing beverages.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                        <div class="card">
-                            <a href="ice.html">
-                                <img src="ice.png" class="card-img-top" alt="Ice Cream">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">Ice Cream</h5>
-                                <p class="card-text">Best in class ideal ice cream.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script>
-        document.getElementById('searchInput').addEventListener('input', function() {
-            const searchTerm = this.value.toLowerCase();
-            const cards = document.querySelectorAll('.card-text');
-
-            // Remove previous highlights
-            cards.forEach(card => {
-                card.innerHTML = card.innerHTML.replace(/<mark class="highlight">|<\/mark>/g, '');
-            });
-
-            if (searchTerm) {
-                cards.forEach(card => {
-                    const regex = new RegExp(`(${searchTerm})`, 'gi');
-                    card.innerHTML = card.innerHTML.replace(regex, '<mark class="highlight">$1</mark>');
-                });
-            }
-        });
-    </script>
-    <p style="color: rgba(0, 0, 0, 0);">This Menu is devoloped by © Kishan Kalandoor </p>
-
+  <div id="content">Loading...</div>
 </body>
 </html>
